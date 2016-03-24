@@ -1,0 +1,15 @@
+{
+   "lesson": {
+      "objective": "Learning objective text.",
+
+      "problem": "Problem statement text.",
+
+      "code":
+         "Var I, J : Integer;\n\nRead(I);\nRead(J);\n\nI := J + 1;\n\nConfirm I <textarea class=\"opField\" id=\"op1\" rows=\"1\" cols=\"10\" placeholder=\"op\"></textarea> J;\n\n Confirm J = <textarea class=\"expField\" id=\"exp1\" rows=\"1\" cols=\"10\" placeholder=\"exp\"></textarea>;",
+
+      "keyMap": [
+         { "id": "op1", "key": ">" },
+         { "id": "exp1", "key": "J" }
+      ]
+   }
+}

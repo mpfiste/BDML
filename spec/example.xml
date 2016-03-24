@@ -1,28 +1,30 @@
-<lesson>
+<?xml version="1.0" encoding="UTF-8"?>
 
-   <objective>
-      Assignments give values to variables. The symbol for assignment in RESOLVE is ":=".
+<bdml version="1.0">
+   <lesson>
+      <objective>
+         Assignments give values to variables. The symbol for assignment in RESOLVE is ":=".
 
-      Assignment gives the variable on the left of the operator the value of the expression
-      on the right of the operator.
-   </objective>
+         Assignment gives the variable on the left of the operator the value of the expression
+         on the right of the operator.
+      </objective>
 
-   <problem>
-      Consider the following code fragment involving integers I and J. What is true about I
-      relative to J at the end of execution?
-   </problem>
+      <problem>
+         Consider the following code fragment involving integers I and J. What is true about I
+         relative to J at the end of execution?
+      </problem>
 
-   <code>
-      Var I, J : Integer;
+      <code>
+         Var I, J : Integer;
 
-      Read(I);
-      Read(J);
+         Read(I);
+         Read(J);
 
-      I := J + 1;
+         I := J + 1;
 
-      Confirm I <op key=">"/> J;
+         Confirm I <op key=">"/> J;
 
-      Confirm J = <exp key="J"/>;
-   </code>
-
-</lesson>
+         Confirm J = <exp key="J"/>;
+      </code>
+   </lesson>
+</bdml>

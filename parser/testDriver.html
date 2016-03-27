@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BDML Parser Test Druver</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="bdmlParser.js"></script>
+</head>
+<body>
+    <pre id="target">
+
+    </pre>
+</body>
+
+<script>
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            myFunction(xhttp);
+        }
+    };
+    xhttp.open("GET", "../spec/example.xml", true);
+    xhttp.send();
+
+    function myFunction(xml) {
+        var xmlDoc = xml.responseXML;
+        var BDO = toBDO(xmlDoc);
+
+        document.getElementById("target").innerHTML = BDO.html;
+
+        download("lesson.json", JSON.stringify(BDO, null, 2));
+    }
+
+    function download(filename, text) {
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+    }
+</script>
+</html>
